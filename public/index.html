@@ -2,26 +2,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <base href = '/'>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Yosemite</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap.min.js"></script>
 
     <!-- Load Angular.js  1.56 from Google CDN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
     <!-- Load Angular Router from Google CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.js"></script>
     
-    <script src="js/app"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap.min.js"></script>
+    
+    <!-- Home Script -->
+    <script src='./client/js/app.js'></script>
+    <script src='./client/js/config/routes.js'></script>
+
+    <!-- Controller Scripts -->
+    <script src = './client/js/controller/cartController.js'></script>
+    <script src = './client/js/controller/productListController.js'></script>
 
   </head>
 
-    <body lang="en">
+    <body lang="en" ng-app="app">
 
     <h1>Yosemite</h1>
-
-    <app></app>
+    <nav>
+      <a class='btn btn-primary btn-lg' href = '/products'>Products</a>
+      <a class='btn btn-primary btn-lg' href = '/cart'>Cart</a>
+    </nav>
+    <div ng-view = ''></div>
 
   </body>
 
