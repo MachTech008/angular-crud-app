@@ -1,0 +1,14 @@
+<h3>Products</h3>
+<table class = 'table'>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat= 'product in productController.products'>
+		<td>{{product.name}}</td>
+		<td>{{product.price}}</td>
+		<td><button class="btn btn-default" ng-click = 'productController.addToCart(product)'>Add to Cart</button></td>
+	</tr>
+</table>
+

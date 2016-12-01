@@ -1,0 +1,14 @@
+<h3>My Cart</h3>
+<table class = 'table'>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat= 'cartObject in cartController.myCart'>
+		<td>{{cartObject.name}}</td>
+		<td>{{cartObject.price}}</td>
+		<td><button class="btn btn-default" ng-click = 'removeFromCart(cartObject)'>Remove</button></td>
+	</tr>
+</table>
+<button class = 'btn btn-default' ng-click = 'checkoutCart()'>CheckOut</button>

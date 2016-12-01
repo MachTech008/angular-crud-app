@@ -1,3 +1,4 @@
 app.controller('cartController', function () {
-  console.log('cart');
+  console.log('Hit the cart controller');
+
 })
