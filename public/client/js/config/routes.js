@@ -1,14 +1,14 @@
-app.config(function ($routeProvider){
+app.config(function($routeProvider){
   $routeProvider
-  .when('/', {
-    templateUrl: '../../index.html'
-  })
   .when('/products', {
-    templateUrl: '../../partials/productList.html'
+    templateUrl: '../partials/productList.html',
+    controller: 'productListController'
   })
   .when('/cart', {
-    templateUrl: '../../partials/cart.html',
-    controller: cartController
+    templateUrl: '../partials/cart.html',
+    controller: 'cartController'
   })
-  .otherwise('/');
-})
+  .otherwise({
+    redirectTo: '/'
+  })
+});

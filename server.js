@@ -8,7 +8,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 
-
 app.listen(3000, function () {
   console.log('express listening on port 3000');
 });
