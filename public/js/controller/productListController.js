@@ -1,14 +1,11 @@
-app.controller('productListController', ['contentService', function (contentService) {
+app.controller('productListController', ['contentService', 'orderService', function (contentService, orderService) {
 
-	function getProducts(products){
-		contentService.getProducts()
-	}
+	this.products = [];
 
-  // this.products = [
-  // 		{'name': 'dogbone', 'price': 16 },
-  // 		{'name': 'coffee', 'price': 2 }
-  // ];
-
+  contentService.getProducts(function (data){
+    this.products = data;
+  });
+  
 
   this.addToCart = function (product){
   	console.log(product);

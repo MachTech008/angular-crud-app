@@ -1,4 +1,4 @@
 app.controller('cartController', function () {
 
 
-})
+});
