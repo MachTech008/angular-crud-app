@@ -1,16 +1,17 @@
-app.controller('productListController', function () {
+app.controller('productListController', ['contentService', function (contentService) {
 
-  console.log('Hit the product Controller');
+	function getProducts(products){
+		contentService.getProducts()
+	}
 
-
-  this.products = [
-  		{'name': 'dogbone', 'price': 16 },
-  		{'name': 'coffee', 'price': 2 }
-  ];
+  // this.products = [
+  // 		{'name': 'dogbone', 'price': 16 },
+  // 		{'name': 'coffee', 'price': 2 }
+  // ];
 
 
   this.addToCart = function (product){
   	console.log(product);
   };
 
-});
+}]);

@@ -22,6 +22,12 @@
     <!-- Controller Scripts -->
     <script src = "./js/controller/cartController.js"></script>
     <script src = "./js/controller/productListController.js"></script>
+    <script src = "./js/controller/orderController.js"></script>
+
+    <!--Service Script -->
+    <scipt src = "./js/services/contentService.js"></scipt>
+    <scipt src = "./js/services/orderService.js"></scipt>
+
     <style>[ng-cloak] { display: none; }</style>
     
     <base href = "/">
@@ -32,6 +38,7 @@
       <nav class = 'navbar navbar-default'>
         <a class="btn btn-primary btn-lg" href = "#/">Products</a>
         <a class="btn btn-primary btn-lg" href = "#/cart">Cart</a>
+        <a class="btn btn-primary btn-lg" href = "#/orders">My Orders</a>
       </nav>
       <div ng-view = ""></div>
     </div>
