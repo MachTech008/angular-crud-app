@@ -3,7 +3,7 @@ app.controller('productListController', function (contentService, orderService) 
   var vm = this;
   var tempObjArray;
 
-	vm.products = [];
+  vm.products = [];
 
   var dataClean = function (data){
     tempObjArray = [];
@@ -14,12 +14,12 @@ app.controller('productListController', function (contentService, orderService) 
       newObj.description = data.Items[i].description.S;
       tempObjArray.push(newObj);
     }
-  }
+  };
 
   contentService.getProducts(function (data){
-      dataClean(data);
-      vm.products = tempObjArray;
-    // vm.products = data;
+    // dataClean(data);
+    // vm.products = tempObjArray;
+    vm.products = data;
   });
 
 
@@ -28,4 +28,3 @@ app.controller('productListController', function (contentService, orderService) 
   };
 
 });
-

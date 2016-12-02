@@ -14,11 +14,11 @@ describe('Products', function() {
 
     it('should return a list of products', function(done) {
       request(app)
-        .get('/products')  
+        .get('/products')
         .expect(200)
         .end(function(err, res) {
-          var body = res.body.Items;
-          console.log(body);
+          var body = res.body;
+          console.log('Here is the product-spec body:', body);
           expect(body).to.be.an.instanceof(Array);
           expect(body).to.have.length.above(-1);
           done();

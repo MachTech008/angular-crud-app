@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
 var express = require('express');
 var request = require('request');
 
 var router = express.Router();
-var baseURL = 'http://ec2-54-183-169-236.us-west-1.compute.amazonaws.com:8000'
+var baseURL = 'http://ec2-54-183-169-236.us-west-1.compute.amazonaws.com:8000';
 
 function handleRequest(url, res) {
 
@@ -19,10 +19,10 @@ function handleRequest(url, res) {
 }
 
 router.get('/products', function(req, res) {
-  var url = `${baseURL}/products`;
+  var url = baseURL + '/products';
   console.log(url);
   handleRequest(url, res);
 
-})
+});
 
 module.exports = router;

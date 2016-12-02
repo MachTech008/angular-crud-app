@@ -11,19 +11,18 @@ describe('Orders', function() {
         .get('/orders')
         .expect(200, done)
     });
-
     it('should return a list of orders', function(done) {
       request(app)
-        .get('/orders')  
+        .get('/orders')
         .expect(200)
         .end(function(err, res) {
-          var body = res.body.Items;
-          console.log(body);
+          var body = res.body;
+          console.log('Here is the order-spec body:', body);
+
           expect(body).to.be.an.instanceof(Array);
           expect(body).to.have.length.above(-1);
           done();
-        });
+      });
     });
-
   })
 })

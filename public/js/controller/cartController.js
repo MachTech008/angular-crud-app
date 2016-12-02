@@ -1,5 +1,5 @@
 app.controller('cartController', function (orderService, $location) {
-	
+
 	var vm = this;
 
 	vm.shoppingCart = [];
@@ -13,12 +13,12 @@ app.controller('cartController', function (orderService, $location) {
 	vm.removeFromCart = function (item){
 		// orderService.removeItem(item, function (data){
 		// 	if (data){
-				vm.shoppingCart.subtotal -= vm.shoppingCart.inventory[vm.shoppingCart.inventory.indexOf(item)].price;
-				vm.shoppingCart.inventory.splice(vm.shoppingCart.inventory.indexOf(item), 1);
+		vm.shoppingCart.subtotal -= vm.shoppingCart.inventory[vm.shoppingCart.inventory.indexOf(item)].price;
+		vm.shoppingCart.inventory.splice(vm.shoppingCart.inventory.indexOf(item), 1);
 		// 	}
 		// })
 	};
-	
+
 
 	vm.checkoutCart = function (){
 		var order = {};
