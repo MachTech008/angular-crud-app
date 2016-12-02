@@ -12,7 +12,7 @@
 Angular | Bootstrap | Node.js | Express | DynamoBD
 
 ### Install guide
-- `cd` to repo folder 
+- `cd` to repo folder
 - `npm install`
 
 ### Start application locally
@@ -20,8 +20,11 @@ Angular | Bootstrap | Node.js | Express | DynamoBD
 - `npm start` - development mode
 -  Open up [Local Host](http://localhost:3000)
 
-
 ### Test application locally
 - Finish `Start application locally` steps
 - `npm test`
 
+### Other Automated Tasks
+
+- `npm run lint` : Lints all JS files.
+- `grunt watch` : Watches JS files and re-lints them whenever they are saved.
