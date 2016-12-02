@@ -1,0 +1,27 @@
+<div ng-controller="cartController as vm">
+	<p class="title">My Cart</p>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat= "cartObject in vm.shoppingCart.inventory track by $index">
+			<td>{{cartObject.name}}</td>
+			<td>{{cartObject.price | currency:"$"}}</td>
+			<td><button class="btn btn-default" ng-click="vm.removeFromCart(cartObject)">Remove</button></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h4>Subtotal: {{vm.shoppingCart.subtotal | currency:"$"}}</h4>
+	<br>
+	<button class = "btn btn-default" ng-click = "vm.checkoutCart()">CheckOut</button>
+
+	<div ng-if = "vm.myOrder">
+		<h3>Order Summary </h3>
+		<p>Order created: {{vm.myOrder.createdAt | date : "MMM d, y h:mm a"}}</p>
+		<p><span>Items: </span><span ng-repeat = "item in vm.myOrder.items track by $index">{{item.name}} &nbsp</span></p>
+		<p>Total cost: {{vm.myOrder.total | currency: "$"}}</p>
+	</div>
+</div>
