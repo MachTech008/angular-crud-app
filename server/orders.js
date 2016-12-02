@@ -13,7 +13,7 @@ function handleRequest(url, res) {
       console.error(err);
     }
 
-    // res.set('Content-Type', 'application/json');
+    res.set('Content-Type', 'application/json');
     res.send(body);
   });
 }

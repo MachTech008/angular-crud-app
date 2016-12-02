@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js --abort-on-uncaught-exception",
-    "test": "grunt test",
+    "test": "mocha",
     "lint": "grunt lint"
   },
   "repository": {

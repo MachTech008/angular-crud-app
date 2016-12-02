@@ -17,9 +17,9 @@ app.controller('productListController', function (contentService, orderService) 
   };
 
   contentService.getProducts(function (data){
-    dataClean(data);
-    vm.products = tempObjArray;
-    // vm.products = data;
+    // dataClean(data);
+    // vm.products = tempObjArray;
+    vm.products = data;
   });
 
 
