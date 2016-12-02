@@ -1,11 +1,28 @@
-app.controller('cartController', function ($scope, orderService) {
+app.controller('cartController', function (orderService, $location) {
 	
-	$scope.shoppingCart = [];
+	var vm = this;
+
+	vm.shoppingCart = [];
+	vm.myOrder;
 
 	orderService.getShoppingCart(function (data){
-		$scope.shoppingCart = data;
+		vm.shoppingCart = data;
+		console.log(data);
 	});
 
-	$scope.removeFromCart = function ($index)
+	// $scope.removeFromCart = function ($index)
+
+	vm.checkoutCart = function (){
+		var order = {};
+		order.items = vm.shoppingCart.inventory;
+		order.total = vm.shoppingCart.subtotal;
+		order.createdAt = new Date();
+		if (vm.shoppingCart.length > 0){
+			vm.myOrder = order;
+		};
+		vm.shoppingCart = [];
+		// orderService.checkoutCart(order);
+		// $location.path('/orders');
+	};
 
 });

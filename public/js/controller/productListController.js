@@ -1,13 +1,15 @@
-app.controller('productListController', function ($scope, contentService, orderService) {
+app.controller('productListController', function (contentService, orderService) {
 
-	$scope.products = [];
+  var vm = this;
+
+	vm.products = [];
 
   contentService.getProducts(function (data){
-    $scope.products = data;
+    vm.products = data;
   });
 
 
-  $scope.addToCart = function (product){
+  vm.addToCart = function (product){
     orderService.addToCart(product);
   };
 

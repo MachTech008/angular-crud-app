@@ -1,0 +1,14 @@
+<h3>My Orders</h3>
+<table class = 'table'>
+	<tr>
+		<th>Order Date</th>
+		<th>Items</th>
+		<th>Total</th>
+	</tr>
+	<tr ng-repeat= 'order in orders track by $index'>
+		<td>{{order.createdAt}}</td>
+		<td>{{order.items}}</td>
+		<td>{{order.total}}</td>
+	</tr>
+</table>
+

@@ -1,14 +1,24 @@
-<h3>My Cart</h3>
-<table class = 'table'>
-	<tr>
-		<th>Name</th>
-		<th>Price</th>
-		<th>Action</th>
-	</tr>
-	<tr ng-repeat= 'cartObject in shoppingCart'>
-		<td>{{cartObject.name}}</td>
-		<td>{{cartObject.price}}</td>
-		<td><button class="btn btn-default" ng-click = 'removeFromCart(cartObject)'>Remove</button></td>
-	</tr>
-</table>
-<button class = 'btn btn-default' ng-click = 'checkoutCart()'>CheckOut</button>
+<div ng-controller="cartController as vm">
+	<h3>My Cart</h3>
+	<table class = "table">
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat= "cartObject in vm.shoppingCart.inventory track by $index">
+			<td>{{cartObject.name}}</td>
+			<td>{{cartObject.price | currency:"$"}}</td>
+			<td><button class="btn btn-default" ng-click="vm.removeFromCart(cartObject)">Remove</button></td>
+		</tr>
+	</table>
+	<h3>Subtotal: {{vm.shoppingCart.subtotal | currency:"$"}}</h3>
+	<button class = "btn btn-default" ng-click = "vm.checkoutCart()">CheckOut</button>
+
+	<div ng-if = "myOrder">
+		<h3>Order Summary </h3>
+		<p>Order created: {{vm.myOrder.createdAt | date : "MMM d, y h:mm a"}}</p>
+		<p>Items</p><p ng-repeat = "item in myOrder.items"></p>
+		<p>Total cost: {{vm.myOrder.total | currency: "$"}}</p>
+	</div>
+</div>
