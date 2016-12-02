@@ -6,8 +6,18 @@ var request = require('request');
 var router = express.Router();
 var baseURL = 'http://ec2-54-183-169-236.us-west-1.compute.amazonaws.com:8000';
 
-function handleRequest(url, res) {
 
+//Routes
+router.get('/products', function(req, res) {
+  var url = baseURL + '/products';
+  // console.log(url);
+  getProducts(url, res);
+
+});
+
+
+//Server Controller methods
+function getProducts(url, res) {
   request.get(url, function(err, response, body) {
     if (err) {
       console.error(err);
@@ -18,11 +28,7 @@ function handleRequest(url, res) {
   });
 }
 
-router.get('/products', function(req, res) {
-  var url = baseURL + '/products';
-  console.log(url);
-  handleRequest(url, res);
 
-});
+
 
 module.exports = router;
