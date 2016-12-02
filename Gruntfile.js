@@ -13,7 +13,7 @@ grunt.initConfig({
 
     watch: {
       scripts: {
-        files: ['**/*.js', 'Gruntfile.js'],
+        files: ['client/**/*.js', 'Gruntfile.js', 'package.json'],
         tasks: ['eslint'],
         options: {
           spawn: false  // set spawn to false to speed process
@@ -47,7 +47,7 @@ grunt.initConfig({
 
       my_target: {
         files: {
-          'dest/<%= pkg.name %>.js': ['cartController.js', 'productListController.js'] // array takes a list of all annotated JS files and concatenate them.
+          'dest/<%= pkg.name %>.js': ['./public/controller/cartController.js', '.public/controller/productListController.js'] // array takes a list of all annotated JS files and concatenate them.
         },
       },
     },
