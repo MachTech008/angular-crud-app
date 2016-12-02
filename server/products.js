@@ -6,8 +6,6 @@ var request = require('request');
 var router = express.Router();
 var baseURL = 'http://ec2-54-183-169-236.us-west-1.compute.amazonaws.com:8000'
 
-//Server based instance of shoppingCart
-var myShoppingCart = {'inventory': [], 'subtotal': 0};
 
 //Routes
 router.get('/products', function(req, res) {
@@ -15,9 +13,6 @@ router.get('/products', function(req, res) {
   getProducts(url, res);
 })
 
-router.post('/shoppingCart/add', function (req, res){
-  addToCart(req.body, res);
-})
 
 //Server Controller methods
 function getProducts(url, res) {
@@ -31,11 +26,6 @@ function getProducts(url, res) {
   });
 }
 
-function addToCart(req, res){
-  myShoppingCart.inventory.push(req);
-  myShoppingCart.subtotal += req.price;
-  res.json(req);
-}
 
 
 

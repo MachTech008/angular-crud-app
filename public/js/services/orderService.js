@@ -1,13 +1,10 @@
 app.service('orderService', function ($http, $q){
 
-	var shoppingCart = {'inventory': [], 'subtotal': 0};
 	this.orders = [];
-	this.shoppingCart = shoppingCart;
-
+	
 	this.getShoppingCart = function (callback){
 		$http.get('/shoppingCart')
 			.then(function (response){
-				shoppingCart = response.data;
 				callback(response.data);
 			})
 			.catch(function (err){
@@ -18,8 +15,9 @@ app.service('orderService', function ($http, $q){
 	this.addToCart = function (product){
 		$http.post('/shoppingCart/add', product)
 	      .then(function (response){
-			shoppingCart.inventory.push(response.data);
-			shoppingCart.subtotal += response.data.price;
+			// shoppingCart.inventory.push(response.data);
+			// shoppingCart.subtotal += response.data.price;
+			console.log(response.data);
 	    }).catch(function (err){
 	      console.error(err);
 	    });

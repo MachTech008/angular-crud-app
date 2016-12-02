@@ -23,6 +23,7 @@ app.controller('productListController', function (contentService, orderService, 
 
 
   vm.addToCart = function (product){
+    console.log(product);
     orderService.addToCart(product);
   };
 
