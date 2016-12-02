@@ -1,13 +1,13 @@
-app.service('contentService', function ($http){
+app.service('contentService', function ($http, $q){
 
-	var products = [
-  		{'name': 'dogbone', 'price': 16, 'description': 'A succulent chewing toy.'},
-  		{'name': 'coffee', 'price': 3, 'description': 'Brown water.'}
- 	 ];
+  var products = [
+      {'name': 'dogbone', 'price': 16, 'description': 'A succulent chewing toy.'},
+      {'name': 'coffee', 'price': 3, 'description': 'Brown water.'},
+      {'name': 'macbook', 'price': 1400, 'description': 'Useful.'}
+   ];
 
-	var getProducts = function (){
-		console.log('getting products');
-		return products;
-	};
-	
+  this.getProducts = function (callback){
+    callback(products);
+  };
+
 });

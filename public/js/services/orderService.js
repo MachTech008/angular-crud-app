@@ -1,4 +1,4 @@
-app.service('orderService', function ($http){
+app.service('orderService', function ($http, $q){
 
 	
 });
