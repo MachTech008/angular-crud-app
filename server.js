@@ -1,14 +1,29 @@
+'use strict'
+
 var express = require('express');
-var path = require('path');
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var path = require('path');
+
+var products = require('./server/products');
+var orders = require('./server/orders');
+
 var app = express();
+var port = process.env.PORT || 3000;
 
+app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 
-app.listen(3000, function () {
+// bundle
+// app.use(express.static(__dirname + '/public/dist'));
+
+app.get('/products', products);;
+app.get('/orders', orders);
+
+app.listen(port, function () {
   console.log('express listening on port 3000');
 });
 
