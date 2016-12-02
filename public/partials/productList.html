@@ -7,7 +7,7 @@
 			<th>Action</th>
 		</tr>
 		<tr ng-repeat= "product in vm.products track by $index">
-			<td>{{product.Items}}</td>
+			<td>{{product.name}}</td>
 			<td>{{product.price | currency:"$"}}</td>
 			<td><button class="btn btn-default" ng-click="vm.addToCart(product)">Add to Cart</button></td>
 		</tr>
