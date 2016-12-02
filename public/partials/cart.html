@@ -1,6 +1,6 @@
 <div ng-controller="cartController as vm">
-	<h3>My Cart</h3>
-	<table class = "table">
+	<p class="title">My Cart</p>
+	<table class="table">
 		<tr>
 			<th>Name</th>
 			<th>Price</th>
@@ -12,11 +12,14 @@
 			<td><button class="btn btn-default" ng-click="vm.removeFromCart(cartObject)">Remove</button></td>
 		</tr>
 	</table>
-	<h3>Subtotal: {{vm.shoppingCart.subtotal | currency:"$"}}</h3>
+	<br>
+	<br>
+	<h4>Subtotal: {{vm.shoppingCart.subtotal | currency:"$"}}</h4>
+	<br>
 	<button class = "btn btn-default" ng-click = "vm.checkoutCart()">CheckOut</button>
 
 	<div ng-if = "myOrder">
-		<h3>Order Summary </h3>
+		<h5>Order Summary </h>
 		<p>Order created: {{vm.myOrder.createdAt | date : "MMM d, y h:mm a"}}</p>
 		<p>Items</p><p ng-repeat = "item in myOrder.items"></p>
 		<p>Total cost: {{vm.myOrder.total | currency: "$"}}</p>
