@@ -5,7 +5,7 @@
 		<th>Price</th>
 		<th>Action</th>
 	</tr>
-	<tr ng-repeat= 'cartObject in cartController.myCart'>
+	<tr ng-repeat= 'cartObject in shoppingCart'>
 		<td>{{cartObject.name}}</td>
 		<td>{{cartObject.price}}</td>
 		<td><button class="btn btn-default" ng-click = 'removeFromCart(cartObject)'>Remove</button></td>

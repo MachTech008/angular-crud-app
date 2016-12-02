@@ -1,9 +1,9 @@
-app.config(function($routeProvider, $locationProvider){
+app.config(function($routeProvider){
 
   $routeProvider
   .when('/', {
    templateUrl: '../partials/productList.html',
-    controller: 'productListController as productController'
+    controller: 'productListController'
   })
   .when('/cart', {
     templateUrl: '../partials/cart.html',
@@ -17,6 +17,4 @@ app.config(function($routeProvider, $locationProvider){
     redirectTo: '/'
   })
   
-  $locationProvider
-    .html5Mode(true);
 });

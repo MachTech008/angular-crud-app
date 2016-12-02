@@ -1,16 +1,14 @@
-app.controller('productListController', function (contentService, $interval) {
+app.controller('productListController', function ($scope, contentService, orderService) {
 
-	this.products = [];
+	$scope.products = [];
 
   contentService.getProducts(function (data){
-    this.products = data;
-    console.log(this.products);
+    $scope.products = data;
   });
 
-  
 
-  this.addToCart = function (product){
-  	console.log(product);
+  $scope.addToCart = function (product){
+    orderService.addToCart(product);
   };
 
 });

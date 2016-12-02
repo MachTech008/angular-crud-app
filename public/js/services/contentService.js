@@ -7,7 +7,13 @@ app.service('contentService', function ($http, $q){
    ];
 
   this.getProducts = function (callback){
+  	// $http.get('https://persist-tasks.herokuapp.com/api/getusers').then(function (data){
+  	// 	console.log(data);
+  	// }).catch(function (err){
+  	// 	console.log(err);
+  	// });
     callback(products);
   };
+
 
 });

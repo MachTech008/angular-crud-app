@@ -5,10 +5,10 @@
 		<th>Price</th>
 		<th>Action</th>
 	</tr>
-	<tr ng-repeat= 'product in productController.products'>
+	<tr ng-repeat= 'product in products'>
 		<td>{{product.name}}</td>
 		<td>{{product.price}}</td>
-		<td><button class="btn btn-default" ng-click = 'productController.addToCart(product)'>Add to Cart</button></td>
+		<td><button class="btn btn-default" ng-click = 'addToCart(product)'>Add to Cart</button></td>
 	</tr>
 </table>
 
