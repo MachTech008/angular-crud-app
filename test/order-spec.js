@@ -14,7 +14,7 @@ describe('Orders', function() {
 
     it('should return a list of orders', function(done) {
       request(app)
-        .get('/orders')
+        .get('/orders') 
         .expect(200)
         .end(function(err, res) {
           var body = res.body.Items;
