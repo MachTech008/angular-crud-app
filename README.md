@@ -1,8 +1,8 @@
-#Angular-Node-Express-DynamoBD
+# Angular-Node-Express-DynamoBD
 
 ### Contributors
 
-[![Lyly Nguyen](https://avatars1.githubusercontent.com/u/12718416?v=3&s=100)](https://github.com/lylynguyen/) <br>Lyly Nguyen| [![Aheri Stanford-Asiyo](https://avatars2.githubusercontent.com/u/20648244?v=3&s=100)](https://github.com/MachTech008/) <br>Aheri Stanford-Asiyo|[![Gabe RatCliff](https://github.com/gabe-ratcliff) <br>Gabe Ratcliff|
+[![Lyly Nguyen](https://avatars1.githubusercontent.com/u/12718416?v=3&s=100)](https://github.com/lylynguyen/) <br>Lyly Nguyen| [![Aheri Stanford-Asiyo](https://avatars2.githubusercontent.com/u/20648244?v=3&s=100)](https://github.com/MachTech008/) <br>Aheri Stanford-Asiyo| [![Gabe RatCliff](https://cloud.githubusercontent.com/assets/20648244/20862981/beed982c-b96f-11e6-9286-4913b8171ac7.png)](https://github.com/gabe-ratcliff) <br>Gabe Ratcliff|
   --- | --- | --- | --- | --- | --- | ---
   [Accenture People Page](https://people.accenture.com/Experience.aspx?accountname=lyly.nguyen)<br>[Github](https://github.com/lyly.nguyen/)<br>|[Accenture People Page](https://people.accenture.com/Experience.aspx?accountname=aheri.stanford-asiyo) <br> [Github](https://github.com/MachTech008/) <br> |[Accenture People Page](https://people.accenture.com/Experience.aspx?accountname=gabe.ratcliff) <br> [Github](https://github.com/gabe-ratcliff) <br>
 
