@@ -1,6 +1,6 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-grunt.initConfig({
+  grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
 
@@ -8,13 +8,13 @@ grunt.initConfig({
       options: {
         configFile: '.eslintrc'
       },
-      src: ['Gruntfile.js', 'client/**/*.js']
+      src: ['server.js', 'package.json', 'Gruntfile.js', 'public/**/*.js', 'server/**/*.js', 'test/**/*.js']
     },
 
     watch: {
       scripts: {
-        files: ['client/**/*.js', 'Gruntfile.js', 'package.json'],
-        tasks: ['eslint'],
+        files: ['server.js', 'package.json', 'Gruntfile.js', 'public/**/*.js', 'server/**/*.js', 'test/**/*.js'],
+        tasks: ['eslint', 'mochaTest'],
         options: {
           spawn: false  // set spawn to false to speed process
         }
@@ -42,14 +42,17 @@ grunt.initConfig({
       options: {
         remove: true,           // clears away any existing annotations
         add: true,              // adds correct annotation for minification safety
-        singleQuotes: true,
+        singleQuotes: true
       },
 
       my_target: {
         files: {
-          'dest/<%= pkg.name %>.js': ['./public/controller/cartController.js', '.public/controller/productListController.js'] // array takes a list of all annotated JS files and concatenate them.
-        },
-      },
+          'dest/CartController.annotated.js': ['./public/js/controller/CartController.js'],
+          'dest/OrderController.annotated.js': ['./public/js/controller/OrderController.js'],
+          'dest/ProductListController.annotated.js': ['./public/js/controller/ProductListController.js']
+          // destination : target for annotation.
+        }
+      }
     },
 
     uglify: {
@@ -94,10 +97,10 @@ grunt.initConfig({
           collapseWhitespace: true
         },
         files: {
-          'src': '**/*.html',
-          'build/index.html': 'index.html',
-          'build/minifiedpartials/microservice1.html': 'partials/microservice1.html',
-          'build/minifiedpartials/microservice2.html': 'partials/microservice2.html'
+          'build/index.html': './public/index.html',       // 'destination': 'source'
+          'build/minifiedpartials/cart.html': './public/partials/cart.html',
+          'build/minifiedpartials/orders.html': './public/partials/orders.html',
+          'build/minifiedpartials/productList.html': './public/partials/productList.html'
         }
       }
     }
@@ -120,9 +123,8 @@ grunt.initConfig({
   grunt.loadNpmTasks('grunt-run');
   grunt.loadNpmTasks('grunt-contrib-obfuscator');
 
-// ADDITIONAL TASKS (not used):
-// html compression: https://github.com/gruntjs/grunt-contrib-htmlmin
-// css trimming (not a grunt product: https://github.com/addyosmani/grunt-uncss
+  // ADDITIONAL TASKS (not used):
+  // css trimming (not a grunt product: https://github.com/addyosmani/grunt-uncss
 
   // Main grunt tasks here:
 
@@ -130,17 +132,18 @@ grunt.initConfig({
   grunt.registerTask('bddtest', ['run']);
   grunt.registerTask('wat-ch', ['watch']); // for use during development
 
-// Optional:
+  // Optional:
   grunt.registerTask('test', ['mochaTest']);
   grunt.registerTask('annotate', ['ngAnnotate']);
-  grunt.registerTask('uglifyjs',['uglify']);
-  grunt.registerTask('minifycss',['cssmin']);
-  grunt.registerTask('image-min',['imagemin']);
+  grunt.registerTask('uglifyjs', ['uglify']);
+  grunt.registerTask('minifycss', ['cssmin']);
+  grunt.registerTask('image-min', ['imagemin']);
+  grunt.registerTask('html-min', ['htmlmin']);
 
   // Tasks that will be executed by Docker during the build step:
 
   grunt.registerTask('build', ['eslint', 'run', 'mochaTest', 'ngAnnotate', 'uglify',
-  'cssmin', 'imagemin', 'htmlmin']);
+    'cssmin', 'imagemin', 'htmlmin']);
 
   grunt.registerTask('default', ['build']);
 
