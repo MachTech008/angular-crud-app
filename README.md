@@ -28,3 +28,5 @@ Angular | Bootstrap | Node.js | Express | DynamoBD
 
 - `npm run lint` : Lints all JS files.
 - `grunt watch` : Watches JS files and re-lints them whenever they are saved.
+- `grunt annotate` : Creates a minification-safe copy of all Angular controllers
+- `npm runn bdd` : Runs Mocked BDD tests
