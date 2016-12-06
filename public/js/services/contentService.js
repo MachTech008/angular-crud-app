@@ -1,12 +1,12 @@
-app.service('contentService', function ($http, $q){
+app.service('contentService', ['$http', '$q', '$log', function ($http, $q, $log) {
 
-  this.getProducts = function (callback){
+  this.getProducts = function (callback) {
     $http.get('/products')
-    .then(function (response){
+    .then(function (response) {
       callback(response.data);
-    }).catch(function (err){
-      console.error(err);
+    }).catch(function (err) {
+      $log.error(err);
     });
   };
 
-});
+}]);

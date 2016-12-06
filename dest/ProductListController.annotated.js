@@ -1,4 +1,4 @@
-app.controller('ProductListController', function (contentService, orderService, $location, $log) {
+app.controller('ProductListController', ['contentService', 'orderService', '$location', '$log', function (contentService, orderService, $location, $log) {
 
   var vm = this;
   // var tempObjArray;
@@ -30,4 +30,4 @@ app.controller('ProductListController', function (contentService, orderService, 
   vm.viewCart = function () {
     $location.path('/cart');
   };
-});
+}]);

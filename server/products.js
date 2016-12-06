@@ -6,19 +6,17 @@ var request = require('request');
 var router = express.Router();
 var baseURL = 'http://ec2-54-183-169-236.us-west-1.compute.amazonaws.com:8000';
 
-
-//Routes
-router.get('/products', function(req, res) {
+// Routes
+router.get('/products', function (req, res) {
   var url = baseURL + '/products';
   // console.log(url);
   getProducts(url, res);
-
 });
 
 
-//Server Controller methods
+// Server Controller methods
 function getProducts(url, res) {
-  request.get(url, function(err, response, body) {
+  request.get(url, function (err, response, body) {
     if (err) {
       console.error(err);
     }
@@ -27,8 +25,5 @@ function getProducts(url, res) {
     res.send(body);
   });
 }
-
-
-
 
 module.exports = router;

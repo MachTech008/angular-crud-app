@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -13,12 +13,11 @@ var port = process.env.PORT || 3000;
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
 // bundle
-// app.use(express.static(__dirname + '/public/dist'));
 
 app.get('/products', products);
 app.get('/orders', orders);

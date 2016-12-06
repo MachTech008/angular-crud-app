@@ -1,4 +1,4 @@
-app.controller('CartController', function (orderService, $location) {
+app.controller('CartController', ['orderService', '$location', function (orderService, $location) {
 
   var vm = this;
 
@@ -34,4 +34,4 @@ app.controller('CartController', function (orderService, $location) {
     // $location.path('/orders');
   };
 
-});
+}]);
